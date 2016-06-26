@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		786B62191D202CDD007179C5 /* Congress.m in Sources */ = {isa = PBXBuildFile; fileRef = 786B62181D202CDD007179C5 /* Congress.m */; };
 		786DBC771D20048200502FCC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 786DBC761D20048200502FCC /* main.m */; };
 		786DBC7A1D20048200502FCC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 786DBC791D20048200502FCC /* AppDelegate.m */; };
 		786DBC7D1D20048200502FCC /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 786DBC7C1D20048200502FCC /* ViewController.m */; };
@@ -15,6 +16,9 @@
 		786DBC851D20048200502FCC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 786DBC831D20048200502FCC /* LaunchScreen.storyboard */; };
 		786DBC901D20048200502FCC /* NotificationHomeworkTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 786DBC8F1D20048200502FCC /* NotificationHomeworkTests.m */; };
 		786DBC9B1D20048200502FCC /* NotificationHomeworkUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 786DBC9A1D20048200502FCC /* NotificationHomeworkUITests.m */; };
+		786DBCAA1D2004D100502FCC /* Doctor.m in Sources */ = {isa = PBXBuildFile; fileRef = 786DBCA91D2004D100502FCC /* Doctor.m */; };
+		786DBCAD1D20051F00502FCC /* Pensioner.m in Sources */ = {isa = PBXBuildFile; fileRef = 786DBCAC1D20051F00502FCC /* Pensioner.m */; };
+		786DBCB01D20055100502FCC /* Businessman.m in Sources */ = {isa = PBXBuildFile; fileRef = 786DBCAF1D20055100502FCC /* Businessman.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +39,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		786B62171D202CDD007179C5 /* Congress.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Congress.h; path = ../../../NotificationTest/NotificationTest/Congress.h; sourceTree = "<group>"; };
+		786B62181D202CDD007179C5 /* Congress.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Congress.m; path = ../../../NotificationTest/NotificationTest/Congress.m; sourceTree = "<group>"; };
 		786DBC721D20048200502FCC /* NotificationHomework.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NotificationHomework.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		786DBC761D20048200502FCC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		786DBC781D20048200502FCC /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -51,6 +57,12 @@
 		786DBC961D20048200502FCC /* NotificationHomeworkUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NotificationHomeworkUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		786DBC9A1D20048200502FCC /* NotificationHomeworkUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NotificationHomeworkUITests.m; sourceTree = "<group>"; };
 		786DBC9C1D20048200502FCC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		786DBCA81D2004D100502FCC /* Doctor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Doctor.h; sourceTree = "<group>"; };
+		786DBCA91D2004D100502FCC /* Doctor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Doctor.m; sourceTree = "<group>"; };
+		786DBCAB1D20051F00502FCC /* Pensioner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Pensioner.h; sourceTree = "<group>"; };
+		786DBCAC1D20051F00502FCC /* Pensioner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Pensioner.m; sourceTree = "<group>"; };
+		786DBCAE1D20055100502FCC /* Businessman.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Businessman.h; sourceTree = "<group>"; };
+		786DBCAF1D20055100502FCC /* Businessman.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Businessman.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +115,14 @@
 			children = (
 				786DBC781D20048200502FCC /* AppDelegate.h */,
 				786DBC791D20048200502FCC /* AppDelegate.m */,
+				786B62171D202CDD007179C5 /* Congress.h */,
+				786B62181D202CDD007179C5 /* Congress.m */,
+				786DBCA81D2004D100502FCC /* Doctor.h */,
+				786DBCA91D2004D100502FCC /* Doctor.m */,
+				786DBCAB1D20051F00502FCC /* Pensioner.h */,
+				786DBCAC1D20051F00502FCC /* Pensioner.m */,
+				786DBCAE1D20055100502FCC /* Businessman.h */,
+				786DBCAF1D20055100502FCC /* Businessman.m */,
 				786DBC7B1D20048200502FCC /* ViewController.h */,
 				786DBC7C1D20048200502FCC /* ViewController.m */,
 				786DBC7E1D20048200502FCC /* Main.storyboard */,
@@ -270,8 +290,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				786DBCB01D20055100502FCC /* Businessman.m in Sources */,
 				786DBC7D1D20048200502FCC /* ViewController.m in Sources */,
 				786DBC7A1D20048200502FCC /* AppDelegate.m in Sources */,
+				786B62191D202CDD007179C5 /* Congress.m in Sources */,
+				786DBCAD1D20051F00502FCC /* Pensioner.m in Sources */,
+				786DBCAA1D2004D100502FCC /* Doctor.m in Sources */,
 				786DBC771D20048200502FCC /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -496,6 +520,7 @@
 				786DBCA11D20048200502FCC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		786DBCA21D20048200502FCC /* Build configuration list for PBXNativeTarget "NotificationHomeworkTests" */ = {
 			isa = XCConfigurationList;
@@ -504,6 +529,7 @@
 				786DBCA41D20048200502FCC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		786DBCA51D20048200502FCC /* Build configuration list for PBXNativeTarget "NotificationHomeworkUITests" */ = {
 			isa = XCConfigurationList;
@@ -512,6 +538,7 @@
 				786DBCA71D20048200502FCC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
