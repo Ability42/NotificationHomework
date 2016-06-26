@@ -10,4 +10,7 @@
 
 @interface Businessman : NSObject
 
+@property (assign, nonatomic) float taxLevel;
+@property (assign, nonatomic) float averagePrice;
+
 @end
