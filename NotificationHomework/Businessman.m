@@ -17,15 +17,17 @@
     self = [super init];
     if (self) {
         
-        NSNotificationCenter* tmpCenter = [NSNotificationCenter defaultCenter];
+        NSNotificationCenter* tmpBusinessmanCenter = [NSNotificationCenter defaultCenter];
         
-        [tmpCenter addObserver:self
-                  selector:@selector(taxLevelChangedNotification:)
-                      name:CongressSalaryDidChangeNotification
-                    object:nil];
+        [tmpBusinessmanCenter addObserver:self
+                                 selector:@selector(taxLevelChangedNotification:)
+                                    name:CongressSalaryDidChangeNotification
+                                   object:nil];
         
-        [tmpCenter addObserver:self selector:@selector(averagePriceChangedNotification:) name:CongressAveragePriceDidChangeNotification
-                     object:nil];
+        [tmpBusinessmanCenter addObserver:self
+                                 selector:@selector(averagePriceChangedNotification:)
+                                     name:CongressAveragePriceDidChangeNotification
+                                   object:nil];
         
         
     }
@@ -35,10 +37,10 @@
 # pragma mark - Notification
 
 - (void) taxLevelChangedNotification:(NSNotification*) notification {
-    NSNumber* value = [notification.userInfo objectForKey:CongressTaxLevelDidChangeNotification];
+    NSNumber* value = [notification.userInfo objectForKey:CongressTaxLevelUserInfoKey];
     float taxLevel = [value floatValue];
     
-    if (taxLevel > self.taxLevel) {
+    if (taxLevel > _taxLevel) {
         NSLog(@"Tax Level increase");
     } else {
         NSLog(@"Tax Level decrease");
@@ -47,17 +49,18 @@
 
 - (void) averagePriceChangedNotification:(NSNotification*) notification {
 
-    NSNumber* value = [notification.userInfo objectForKey:CongressAveragePriceDidChangeNotification];
+    NSNumber* value = [notification.userInfo objectForKey:CongressAveragePriceUserInfoKey];
     float averagePrice = [value floatValue];
     
     if (averagePrice > self.averagePrice) {
         NSLog(@"Inflation!");
     } else {NSLog(@"Deflation!");}
+    // inflation calculated: (new price / old price - 1) * 100%
+    float inflationIndex = (averagePrice / _averagePrice - 1) * 100;
     
-    float inflationIndex = averagePrice / self.averagePrice;
+    NSLog(@"Inflation in this year equals %.2f%%", inflationIndex);
     
-    NSLog(@"Inflation in this year equals %f percent", inflationIndex * 100.0);
-    self.averagePrice = averagePrice;
+    _averagePrice = averagePrice;
 }
 
 #pragma mark - Deallocation

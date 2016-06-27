@@ -17,17 +17,17 @@
 {
     self = [super init];
     if (self) {
-        NSNotificationCenter *tmpNC = [NSNotificationCenter defaultCenter];
+        NSNotificationCenter *tmpPensionerCenter = [NSNotificationCenter defaultCenter];
         
-        [tmpNC addObserver:self
-                      selector:@selector(averagePriceChangedNotification:)
-                          name:CongressAveragePriceDidChangeNotification
-                        object:nil];
+        [tmpPensionerCenter addObserver:self
+                               selector:@selector(averagePriceChangedNotification:)
+                                   name:CongressAveragePriceDidChangeNotification
+                                 object:nil];
         
-        [tmpNC addObserver:self
-                  selector:@selector(pensionChangedNotification:)
-                      name:CongressPensionDidChangeNotification
-                    object:nil];
+        [tmpPensionerCenter addObserver:self
+                               selector:@selector(pensionChangedNotification:)
+                                   name:CongressPensionDidChangeNotification
+                                 object:nil];
         
     }
     return self;
