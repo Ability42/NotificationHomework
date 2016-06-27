@@ -7,9 +7,11 @@
 //
 
 #import "AppDelegate.h"
+#import "Businessman.h"
+#include "Congress.h"
 
 @interface AppDelegate ()
-
+@property (strong, nonatomic) Congress* gover;
 @end
 
 @implementation AppDelegate
@@ -17,7 +19,34 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+
+    self.gover = [[Congress alloc] init];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(congressNotification:)
+                                                 name:CongressAveragePriceDidChangeNotification
+                                               object:nil];
+    
+    Businessman* busyMan1 = [[Businessman alloc] init];
+    Businessman* busyMan2 = [[Businessman alloc] init];
+    Businessman* busyMan3 = [[Businessman alloc] init];
+    Businessman* busyMan4 = [[Businessman alloc] init];
+    Businessman* busyMan5 = [[Businessman alloc] init];
+
+    busyMan1.averagePrice = busyMan2.averagePrice = busyMan3.averagePrice = busyMan4.averagePrice = busyMan5.averagePrice = self.gover.averagePrice;
+    
+    self.gover.averagePrice = 35;
+    self.gover.averagePrice = 10;
+    self.gover.averagePrice = 100;
+    
     return YES;
+}
+- (void) congressNotification:(NSNotification*) notification {
+    NSLog(@"congressNotification userInfo %@", notification.userInfo);
+}
+
+- (void) dealloc {
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

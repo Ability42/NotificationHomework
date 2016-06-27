@@ -19,13 +19,13 @@
     if (self) {
         
         NSNotificationCenter* tmpCenter = [NSNotificationCenter defaultCenter];
+        
         [tmpCenter addObserver:self
                       selector:@selector(averagePriceChangedNotification:)
                           name:CongressAveragePriceDidChangeNotification
                         object:nil];
         
-        NSNotificationCenter* tmpCenter2 = [NSNotificationCenter defaultCenter];
-        [tmpCenter2 addObserver:self
+        [tmpCenter addObserver:self
                       selector:@selector(salaryChangedNotification:)
                           name:CongressSalaryDidChangeNotification
                         object:nil];
@@ -34,7 +34,7 @@
     return self;
 }
 
-#pragma mark - ChangedNotification
+#pragma mark - Notification
 
 - (void) averagePriceChangedNotification:(NSNotification*) notification {
     
@@ -56,5 +56,12 @@
         NSLog(@"Doctor is happy");
     } else {NSLog(@"Doctor isn't happy");}
 }
+
+#pragma mark - Deallocation
+
+- (void) dealloc {
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
 
 @end

@@ -11,11 +11,18 @@
 
 @implementation Pensioner
 
+#pragma mark - Initialization
+
 - (instancetype)init
 {
     self = [super init];
     if (self) {
         NSNotificationCenter *tmpNC = [NSNotificationCenter defaultCenter];
+        
+        [tmpNC addObserver:self
+                      selector:@selector(averagePriceChangedNotification:)
+                          name:CongressAveragePriceDidChangeNotification
+                        object:nil];
         
         [tmpNC addObserver:self
                   selector:@selector(pensionChangedNotification:)
@@ -26,6 +33,7 @@
     return self;
 }
 
+#pragma mark - Notification
 
 - (void) pensionChangedNotification:(NSNotification*) notification {
     NSNumber* value = [notification.userInfo objectForKey:CongressPensionDidChangeNotification];
@@ -50,4 +58,11 @@
         NSLog(@"Deflation!");
     }
 }
+
+#pragma mark - Deallocation
+
+- (void) dealloc {
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
 @end
