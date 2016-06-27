@@ -44,6 +44,8 @@
     } else {
         NSLog(@"fuck, pension is smaller");
     }
+    
+    _pension = pension;
 }
 
 
@@ -57,6 +59,12 @@
     } else {
         NSLog(@"Deflation!");
     }
+    
+    float inflationIndex = (averagePrice / _averagePrice - 1) * 100;
+    
+    NSLog(@"Inflation in this year equals %.2f%%", inflationIndex);
+    
+    _averagePrice = averagePrice;
 }
 
 #pragma mark - Deallocation

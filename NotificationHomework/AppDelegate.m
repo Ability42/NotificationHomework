@@ -9,6 +9,8 @@
 #import "AppDelegate.h"
 #import "Businessman.h"
 #include "Congress.h"
+#include "Doctor.h"
+#include "Pensioner.h"
 
 @interface AppDelegate ()
 @property (strong, nonatomic) Congress* gover;
@@ -25,14 +27,26 @@
                                                  name:CongressAveragePriceDidChangeNotification
                                                object:nil];
     
-    self.gover = [[Congress alloc] init];
+    _gover = [[Congress alloc] init];
     
     Businessman* busyMan1 = [[Businessman alloc] init];
+    Doctor* drHouse = [[Doctor alloc] init];
+    Pensioner* babka = [[Pensioner alloc] init];
 
     busyMan1.averagePrice = self.gover.averagePrice;
+    busyMan1.taxLevel = self.gover.taxLevel;
     
-    self.gover.averagePrice = 40;
-    _gover.averagePrice = 10;
+    drHouse.averagePrice = _gover.averagePrice;
+    drHouse.salary = _gover.salary;
+    
+    babka.averagePrice = self.gover.averagePrice;
+    babka.pension =self.gover.pension;
+    
+    NSLog(@"\nA NEW YEAR COME!\n");
+    
+    _gover.taxLevel = 0.1f;
+    _gover.salary = 3000;
+    _gover.pension = 2000;
     _gover.averagePrice = 100;
     
     return YES;

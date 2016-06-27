@@ -44,6 +44,15 @@
     if (averagePrice > self.averagePrice) {
         NSLog(@"Inflation!");
     } else {NSLog(@"Deflation!");}
+    
+    float inflationIndex = (averagePrice / _averagePrice - 1) * 100;
+    
+    NSLog(@"Inflation in this year equals %.2f%%", inflationIndex);
+    averagePrice = _averagePrice;
+    if ((_salary / averagePrice) < 60) {
+        NSLog(@"What we should eat if the price is highest ever?!!");
+    } else {
+        NSLog(@"Wow, it's okay");}
 }
 
 
@@ -55,6 +64,8 @@
     if (salary > self.salary) {
         NSLog(@"Doctor is happy");
     } else {NSLog(@"Doctor isn't happy");}
+    
+    _salary = salary;
 }
 
 #pragma mark - Deallocation

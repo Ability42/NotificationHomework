@@ -45,6 +45,7 @@
     } else {
         NSLog(@"Tax Level decrease");
     }
+    _taxLevel = taxLevel;
 }
 
 - (void) averagePriceChangedNotification:(NSNotification*) notification {
@@ -60,6 +61,9 @@
     
     NSLog(@"Inflation in this year equals %.2f%%", inflationIndex);
     
+    if ((averagePrice * _taxLevel) > 5) {
+        NSLog(@"Businessman in bad mood now");
+    } else {NSLog(@"Businessman in good mood now");}
     _averagePrice = averagePrice;
 }
 
