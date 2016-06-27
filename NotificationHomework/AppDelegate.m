@@ -21,33 +21,25 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+        
+    self.gover = [[Congress alloc] init];
     
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(congressNotification:)
-                                                 name:CongressAveragePriceDidChangeNotification
-                                               object:nil];
-    
-    _gover = [[Congress alloc] init];
-    
-    Businessman* busyMan1 = [[Businessman alloc] init];
+    Businessman* busyMan = [[Businessman alloc] init];
     Doctor* drHouse = [[Doctor alloc] init];
     Pensioner* babka = [[Pensioner alloc] init];
 
-    busyMan1.averagePrice = self.gover.averagePrice;
-    busyMan1.taxLevel = self.gover.taxLevel;
+    busyMan.taxLevel = self.gover.taxLevel;
+    drHouse.salary = self.gover.salary;
+    babka.pension = self.gover.pension;
     
-    drHouse.averagePrice = _gover.averagePrice;
-    drHouse.salary = _gover.salary;
-    
-    babka.averagePrice = self.gover.averagePrice;
-    babka.pension =self.gover.pension;
+    babka.averagePrice = drHouse.averagePrice = busyMan.averagePrice = self.gover.averagePrice;
     
     NSLog(@"\nA NEW YEAR COME!\n");
     
-    _gover.taxLevel = 0.1f;
-    _gover.salary = 3000;
-    _gover.pension = 2000;
-    _gover.averagePrice = 100;
+    self.gover.taxLevel = 0.5f;
+    self.gover.salary = 12000.f;
+    self.gover.pension = 6000.f;
+    self.gover.averagePrice = 100.f;
     
     return YES;
 }

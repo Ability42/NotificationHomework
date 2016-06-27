@@ -36,7 +36,7 @@
 #pragma mark - Notification
 
 - (void) pensionChangedNotification:(NSNotification*) notification {
-    NSNumber* value = [notification.userInfo objectForKey:CongressPensionDidChangeNotification];
+    NSNumber* value = [notification.userInfo objectForKey:CongressPensionUserInfoKey];
     float pension = [value floatValue];
     
     if (pension > self.pension) {
@@ -51,7 +51,7 @@
 
 - (void) averagePriceChangedNotification:(NSNotification*) notification {
     
-    NSNumber* value = [notification.userInfo objectForKey:CongressAveragePriceDidChangeNotification];
+    NSNumber* value = [notification.userInfo objectForKey:CongressAveragePriceUserInfoKey];
     float averagePrice = [value floatValue];
     
     if (averagePrice > self.averagePrice) {

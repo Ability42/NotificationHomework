@@ -21,7 +21,7 @@
         
         [tmpBusinessmanCenter addObserver:self
                                  selector:@selector(taxLevelChangedNotification:)
-                                    name:CongressSalaryDidChangeNotification
+                                    name:CongressTaxLevelDidChangeNotification
                                    object:nil];
         
         [tmpBusinessmanCenter addObserver:self
@@ -40,12 +40,11 @@
     NSNumber* value = [notification.userInfo objectForKey:CongressTaxLevelUserInfoKey];
     float taxLevel = [value floatValue];
     
-    if (taxLevel > _taxLevel) {
+    if (taxLevel > self.taxLevel) {
         NSLog(@"Tax Level increase");
     } else {
         NSLog(@"Tax Level decrease");
     }
-    _taxLevel = taxLevel;
 }
 
 - (void) averagePriceChangedNotification:(NSNotification*) notification {

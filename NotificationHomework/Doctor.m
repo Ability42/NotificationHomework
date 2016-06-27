@@ -38,7 +38,7 @@
 
 - (void) averagePriceChangedNotification:(NSNotification*) notification {
     
-    NSNumber* value = [notification.userInfo objectForKey:CongressAveragePriceDidChangeNotification];
+    NSNumber* value = [notification.userInfo objectForKey:CongressAveragePriceUserInfoKey];
     float averagePrice = [value floatValue];
     
     if (averagePrice > self.averagePrice) {
@@ -58,7 +58,7 @@
 
 - (void) salaryChangedNotification:(NSNotification*) notification {
     
-    NSNumber* value = [notification.userInfo objectForKey:CongressSalaryDidChangeNotification];
+    NSNumber* value = [notification.userInfo objectForKey:CongressSalaryUserInfoKey];
     float salary = [value floatValue];
     
     if (salary > self.salary) {
