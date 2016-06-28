@@ -21,8 +21,10 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-        
-    self.gover = [[Congress alloc] init];
+    
+// level 1-2
+    
+    self.gover= [[Congress alloc] init];
     
     Businessman* busyMan = [[Businessman alloc] init];
     Doctor* drHouse = [[Doctor alloc] init];
@@ -40,6 +42,10 @@
     self.gover.salary = 12000.f;
     self.gover.pension = 6000.f;
     self.gover.averagePrice = 100.f;
+    
+// level 3
+
+
     
     return YES;
 }
@@ -59,6 +65,7 @@
 - (void)applicationDidEnterBackground:(UIApplication *)application {
     // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
     // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+    NSLog(@"%@ goes sleep", [_busyMan description]);
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application {

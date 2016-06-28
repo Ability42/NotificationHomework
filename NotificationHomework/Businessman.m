@@ -17,6 +17,8 @@
     self = [super init];
     if (self) {
         
+        self.name = @"Stepan";
+        
         NSNotificationCenter* tmpBusinessmanCenter = [NSNotificationCenter defaultCenter];
         
         [tmpBusinessmanCenter addObserver:self
@@ -32,6 +34,13 @@
         
     }
     return self;
+}
+
+#pragma mark - Description
+
+- (NSString *)description
+{
+    return [NSString stringWithFormat:@"%@", self.name];
 }
 
 # pragma mark - Notification
@@ -54,7 +63,10 @@
     
     if (averagePrice > self.averagePrice) {
         NSLog(@"Inflation!");
-    } else {NSLog(@"Deflation!");}
+    } else {
+        NSLog(@"Deflation!");
+    }
+    
     // inflation calculated: (new price / old price - 1) * 100%
     float inflationIndex = (averagePrice / _averagePrice - 1) * 100;
     
@@ -62,7 +74,9 @@
     
     if ((averagePrice * _taxLevel) > 5) {
         NSLog(@"Businessman in bad mood now");
-    } else {NSLog(@"Businessman in good mood now");}
+    } else {
+        NSLog(@"Businessman in good mood now");
+    }
     _averagePrice = averagePrice;
 }
 

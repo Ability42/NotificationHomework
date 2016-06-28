@@ -12,5 +12,6 @@
 
 @property (assign, nonatomic) float taxLevel;
 @property (assign, nonatomic) float averagePrice;
+@property (strong, nonatomic) NSString* name;
 
 @end
