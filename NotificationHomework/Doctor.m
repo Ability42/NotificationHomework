@@ -17,17 +17,21 @@
 {
     self = [super init];
     if (self) {
-        
-        NSNotificationCenter* tmpDoctorCenter = [NSNotificationCenter defaultCenter];
-        
-        [tmpDoctorCenter addObserver:self
+        self.name = @"dr.House";
+                
+        [[NSNotificationCenter defaultCenter] addObserver:self
                             selector:@selector(averagePriceChangedNotification:)
                                 name:CongressAveragePriceDidChangeNotification
                               object:nil];
         
-        [tmpDoctorCenter addObserver:self
+        [[NSNotificationCenter defaultCenter] addObserver:self
                             selector:@selector(salaryChangedNotification:)
                                 name:CongressSalaryDidChangeNotification
+                              object:nil];
+        
+        [[NSNotificationCenter defaultCenter] addObserver:self
+                            selector:@selector(appWillResignActive:)
+                                name:UIApplicationDidEnterBackgroundNotification
                               object:nil];
     }
 
@@ -71,6 +75,12 @@
     } else {NSLog(@"Doctor isn't happy");}
     
     _salary = salary;
+}
+
+#pragma mark - appWillResignActive
+
+- (void) appWillResignActive:(NSNotification*) notification {
+    NSLog(@"%@ goes sleep", self.name);
 }
 
 #pragma mark - Deallocation

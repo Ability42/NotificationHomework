@@ -17,16 +17,20 @@
 {
     self = [super init];
     if (self) {
-        NSNotificationCenter *tmpPensionerCenter = [NSNotificationCenter defaultCenter];
-        
-        [tmpPensionerCenter addObserver:self
+        self.name = @"Scally";
+        [[NSNotificationCenter defaultCenter] addObserver:self
                                selector:@selector(averagePriceChangedNotification:)
                                    name:CongressAveragePriceDidChangeNotification
                                  object:nil];
         
-        [tmpPensionerCenter addObserver:self
+        [[NSNotificationCenter defaultCenter] addObserver:self
                                selector:@selector(pensionChangedNotification:)
                                    name:CongressPensionDidChangeNotification
+                                 object:nil];
+        
+        [[NSNotificationCenter defaultCenter] addObserver:self
+                               selector:@selector(appWillResignActive:)
+                                   name:UIApplicationDidEnterBackgroundNotification
                                  object:nil];
         
     }
@@ -65,6 +69,12 @@
     NSLog(@"Inflation in this year equals %.2f%%", inflationIndex);
     
     _averagePrice = averagePrice;
+}
+
+#pragma mark - appWillResignActive
+
+- (void) appWillResignActive:(NSNotification*) notification {
+    NSLog(@"%@ goes sleep", self.name);
 }
 
 #pragma mark - Deallocation

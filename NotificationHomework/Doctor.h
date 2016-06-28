@@ -12,5 +12,7 @@
 
 @property (assign, nonatomic) float averagePrice;
 @property (assign, nonatomic) float salary;
+@property (strong, nonatomic) NSString* name;
+
 
 @end

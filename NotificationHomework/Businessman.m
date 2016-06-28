@@ -19,18 +19,22 @@
         
         self.name = @"Stepan";
         
-        NSNotificationCenter* tmpBusinessmanCenter = [NSNotificationCenter defaultCenter];
         
-        [tmpBusinessmanCenter addObserver:self
-                                 selector:@selector(taxLevelChangedNotification:)
-                                    name:CongressTaxLevelDidChangeNotification
-                                   object:nil];
+        [[NSNotificationCenter defaultCenter] addObserver:self
+                                                 selector:@selector(taxLevelChangedNotification:)
+                                                     name:CongressTaxLevelDidChangeNotification
+                                                   object:nil];
         
-        [tmpBusinessmanCenter addObserver:self
-                                 selector:@selector(averagePriceChangedNotification:)
-                                     name:CongressAveragePriceDidChangeNotification
-                                   object:nil];
+        [[NSNotificationCenter defaultCenter] addObserver:self
+                                                 selector:@selector(averagePriceChangedNotification:)
+                                                     name:CongressAveragePriceDidChangeNotification
+                                                   object:nil];
         
+        [[NSNotificationCenter defaultCenter] addObserver:self
+                                                 selector:@selector(appWillResignActive:)
+                                                     name:UIApplicationDidEnterBackgroundNotification
+                                                   object:nil];
+
         
     }
     return self;
@@ -82,9 +86,13 @@
 
 #pragma mark - Deallocation
 
-- (void) dealloc {
-    [[NSNotificationCenter defaultCenter] removeObserver:self];
+//- (void) dealloc {
+//    [[NSNotificationCenter defaultCenter] removeObserver:self];
+//}
+
+#pragma mark - appWillResignActive
+
+- (void) appWillResignActive:(NSNotification*) notification {
+    NSLog(@"%@ goes sleep", self.name);
 }
-
-
 @end

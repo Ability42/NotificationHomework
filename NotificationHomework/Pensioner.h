@@ -7,10 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 @interface Pensioner : NSObject
 
 @property (assign, nonatomic) float pension;
 @property (assign, nonatomic) float averagePrice;
+@property (assign, nonatomic) NSString* name;
 
 @end

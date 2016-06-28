@@ -14,6 +14,10 @@
 
 @interface AppDelegate ()
 @property (strong, nonatomic) Congress* gover;
+@property (strong, nonatomic) Doctor* drHouse;
+@property (strong, nonatomic) Pensioner* babka;
+@property (strong, nonatomic) Businessman* busyMan;
+
 @end
 
 @implementation AppDelegate
@@ -23,38 +27,35 @@
     // Override point for customization after application launch.
     
 // level 1-2
+
     
     self.gover= [[Congress alloc] init];
     
-    Businessman* busyMan = [[Businessman alloc] init];
-    Doctor* drHouse = [[Doctor alloc] init];
-    Pensioner* babka = [[Pensioner alloc] init];
+    self.busyMan = [[Businessman alloc] init];
+    self.drHouse = [[Doctor alloc] init];
+    self.babka = [[Pensioner alloc] init];
 
-    busyMan.taxLevel = self.gover.taxLevel;
-    drHouse.salary = self.gover.salary;
-    babka.pension = self.gover.pension;
+    _busyMan.taxLevel = self.gover.taxLevel;
+    _drHouse.salary = self.gover.salary;
+    _babka.pension = self.gover.pension;
     
-    babka.averagePrice = drHouse.averagePrice = busyMan.averagePrice = self.gover.averagePrice;
+    _babka.averagePrice = _drHouse.averagePrice = _busyMan.averagePrice = self.gover.averagePrice;
     
-    NSLog(@"\nA NEW YEAR COME!\n");
+    NSLog(@"A NEW YEAR COME!\n\n");
     
     self.gover.taxLevel = 0.5f;
     self.gover.salary = 12000.f;
     self.gover.pension = 6000.f;
-    self.gover.averagePrice = 100.f;
+    self.gover.averagePrice = 43.f;
     
 // level 3
-
+//
 
     
     return YES;
 }
 - (void) congressNotification:(NSNotification*) notification {
 //    NSLog(@"congressNotification userInfo %@", notification.userInfo);
-}
-
-- (void) dealloc {
-    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {
@@ -65,7 +66,6 @@
 - (void)applicationDidEnterBackground:(UIApplication *)application {
     // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
     // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
-    NSLog(@"%@ goes sleep", [_busyMan description]);
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application {
