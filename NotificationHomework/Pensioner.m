@@ -19,22 +19,36 @@
     if (self) {
         self.name = @"Scally";
         [[NSNotificationCenter defaultCenter] addObserver:self
-                               selector:@selector(averagePriceChangedNotification:)
-                                   name:CongressAveragePriceDidChangeNotification
-                                 object:nil];
+                                                 selector:@selector(averagePriceChangedNotification:)
+                                                     name:CongressAveragePriceDidChangeNotification
+                                                   object:nil];
         
         [[NSNotificationCenter defaultCenter] addObserver:self
-                               selector:@selector(pensionChangedNotification:)
-                                   name:CongressPensionDidChangeNotification
-                                 object:nil];
+                                                 selector:@selector(pensionChangedNotification:)
+                                                     name:CongressPensionDidChangeNotification
+                                                   object:nil];
         
         [[NSNotificationCenter defaultCenter] addObserver:self
-                               selector:@selector(appWillResignActive:)
-                                   name:UIApplicationDidEnterBackgroundNotification
-                                 object:nil];
+                                                 selector:@selector(appWillResignActive:)
+                                                     name:UIApplicationDidEnterBackgroundNotification
+                                                   object:nil];
         
+        [[NSNotificationCenter defaultCenter] addObserver:self
+                                                 selector:@selector(appWillEnterForegroung)
+                                                     name:UIApplicationWillEnterForegroundNotification
+                                                   object:nil];
     }
     return self;
+}
+
+#pragma mark - appWillResignActive
+
+- (void) appWillResignActive:(NSNotification*) notification {
+    NSLog(@"%@ goes sleep", self.name);
+}
+
+- (void) appWillEnterForegroung {
+    NSLog(@"%@ returned", self.name);
 }
 
 #pragma mark - Notification
@@ -69,12 +83,6 @@
     NSLog(@"Inflation in this year equals %.2f%%", inflationIndex);
     
     _averagePrice = averagePrice;
-}
-
-#pragma mark - appWillResignActive
-
-- (void) appWillResignActive:(NSNotification*) notification {
-    NSLog(@"%@ goes sleep", self.name);
 }
 
 #pragma mark - Deallocation

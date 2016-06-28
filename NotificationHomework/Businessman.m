@@ -34,13 +34,28 @@
                                                  selector:@selector(appWillResignActive:)
                                                      name:UIApplicationDidEnterBackgroundNotification
                                                    object:nil];
+        [[NSNotificationCenter defaultCenter] addObserver:self
+                                                 selector:@selector(appWillEnterForegroung)
+                                                     name:UIApplicationWillEnterForegroundNotification
+                                                   object:nil];
 
         
     }
     return self;
 }
 
+#pragma mark - appWillResignActive
+
+- (void) appWillResignActive:(NSNotification*) notification {
+    NSLog(@"%@ goes sleep", self.name);
+}
+
+- (void) appWillEnterForegroung {
+    NSLog(@"%@ returned", self.name);
+}
+
 #pragma mark - Description
+
 
 - (NSString *)description
 {
@@ -86,13 +101,8 @@
 
 #pragma mark - Deallocation
 
-//- (void) dealloc {
-//    [[NSNotificationCenter defaultCenter] removeObserver:self];
-//}
-
-#pragma mark - appWillResignActive
-
-- (void) appWillResignActive:(NSNotification*) notification {
-    NSLog(@"%@ goes sleep", self.name);
+- (void) dealloc {
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
+
 @end
