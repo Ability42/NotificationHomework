@@ -8,15 +8,17 @@
 
 #import "AppDelegate.h"
 #import "Businessman.h"
-#include "Congress.h"
-#include "Doctor.h"
-#include "Pensioner.h"
+#import "Congress.h"
+#import "Doctor.h"
+#import "Pensioner.h"
+#import "SPAppDelegate.h"
 
 @interface AppDelegate ()
 @property (strong, nonatomic) Congress* gover;
 @property (strong, nonatomic) Doctor* drHouse;
 @property (strong, nonatomic) Pensioner* babka;
 @property (strong, nonatomic) Businessman* busyMan;
+@property (strong, nonatomic) SPAppDelegate* customAppDelegate;
 
 @end
 
@@ -48,14 +50,16 @@
     self.gover.pension = 6000.f;
     self.gover.averagePrice = 43.f;
     
-// level 3
-//
-
+// level 3 implement in my custom classes
     
+// level 4 implemet in SPAppDelegate
+    
+    _customAppDelegate = [[SPAppDelegate alloc] init];
+
     return YES;
 }
 - (void) congressNotification:(NSNotification*) notification {
-//    NSLog(@"congressNotification userInfo %@", notification.userInfo);
+    NSLog(@"congressNotification userInfo %@", notification.userInfo);
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

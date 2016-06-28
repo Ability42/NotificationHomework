@@ -19,6 +19,7 @@
 		786DBCAA1D2004D100502FCC /* Doctor.m in Sources */ = {isa = PBXBuildFile; fileRef = 786DBCA91D2004D100502FCC /* Doctor.m */; };
 		786DBCAD1D20051F00502FCC /* Pensioner.m in Sources */ = {isa = PBXBuildFile; fileRef = 786DBCAC1D20051F00502FCC /* Pensioner.m */; };
 		786DBCB01D20055100502FCC /* Businessman.m in Sources */ = {isa = PBXBuildFile; fileRef = 786DBCAF1D20055100502FCC /* Businessman.m */; };
+		78B118341D22833700B1DD12 /* SPAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B118331D22833700B1DD12 /* SPAppDelegate.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +64,8 @@
 		786DBCAC1D20051F00502FCC /* Pensioner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Pensioner.m; sourceTree = "<group>"; };
 		786DBCAE1D20055100502FCC /* Businessman.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Businessman.h; sourceTree = "<group>"; };
 		786DBCAF1D20055100502FCC /* Businessman.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Businessman.m; sourceTree = "<group>"; };
+		78B118321D22833700B1DD12 /* SPAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPAppDelegate.h; sourceTree = "<group>"; };
+		78B118331D22833700B1DD12 /* SPAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPAppDelegate.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +118,8 @@
 			children = (
 				786DBC781D20048200502FCC /* AppDelegate.h */,
 				786DBC791D20048200502FCC /* AppDelegate.m */,
+				78B118321D22833700B1DD12 /* SPAppDelegate.h */,
+				78B118331D22833700B1DD12 /* SPAppDelegate.m */,
 				786B62171D202CDD007179C5 /* Congress.h */,
 				786B62181D202CDD007179C5 /* Congress.m */,
 				786DBCAE1D20055100502FCC /* Businessman.h */,
@@ -291,6 +296,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				786DBCB01D20055100502FCC /* Businessman.m in Sources */,
+				78B118341D22833700B1DD12 /* SPAppDelegate.m in Sources */,
 				786DBC7D1D20048200502FCC /* ViewController.m in Sources */,
 				786DBC7A1D20048200502FCC /* AppDelegate.m in Sources */,
 				786B62191D202CDD007179C5 /* Congress.m in Sources */,
